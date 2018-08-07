@@ -15,11 +15,23 @@ export class RecipeService {
   ) { }
 
   getAllRecipes(): Observable<Recipe[]> {
-    // return this._httpClient.get<Recipe[]>(this.recipeUrl);
-    return of(MOCK_RECIPES);
+    return this._httpClient.get<Recipe[]>(this.recipeUrl);
   }
 
   getById(id: string): Observable<Recipe> {
     return this._httpClient.get<Recipe>(`${this.recipeUrl}/${id}`);
+  }
+
+  addRecipe(recipe: Recipe): Observable<Recipe> {
+    return this._httpClient.post<Recipe>(this.recipeUrl, recipe);
+  }
+
+  updateRecipe(recipe: Recipe): Observable<Recipe> {
+    console.log('recipe : ', recipe);
+    return this._httpClient.patch<Recipe>(this.recipeUrl, recipe);
+  }
+
+  deleteRecipe(recipe: Recipe): Observable<Recipe> {
+    return this._httpClient.delete<Recipe>(`${this.recipeUrl}/${recipe.id}`);
   }
 }

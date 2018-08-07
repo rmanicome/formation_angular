@@ -1,0 +1,12 @@
+
+.button-directive {
+  background-color: red;
+
+  &.button-test {
+    background-color: blue;
+  }
+
+  &.button-test:hover {
+    background-color: blueviolet;
+  }
+}

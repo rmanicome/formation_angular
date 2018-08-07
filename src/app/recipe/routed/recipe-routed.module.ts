@@ -6,18 +6,25 @@ import { StrToArrayPipe } from '../shared/str-to-array.pipe';
 import { SharedModule } from '../../shared/shared.module';
 import { RecipeOverviewComponent } from './recipe-overview/recipe-overview.component';
 import { RouterModule } from '@angular/router';
+import { RecipeCreateComponent } from './recipe-create/recipe-create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecipeUpdateComponent } from './recipe-update/recipe-update.component';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     RecipeListComponent,
     RecipeDetailComponent,
     StrToArrayPipe,
-    RecipeOverviewComponent
+    RecipeOverviewComponent,
+    RecipeCreateComponent,
+    RecipeUpdateComponent
   ]
 })
 export class RecipeRoutedModule { }
